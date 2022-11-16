@@ -77,10 +77,6 @@ function addToHistory(operator: string) {
 function onChangeTheme() {
   theme.value = theme.value === 'dark-theme' ? 'light-theme' : 'dark-theme';
 }
-
-onMounted(() => {
-
-});
 </script>
 
 <template>
