@@ -57,10 +57,6 @@ function num(num: string) {
     operatorClicked.value = false;
   }
 
-  if (answer.value) {
-    answer.value = '';
-  }
-
   currentValue.value = `${currentValue.value}${num}`;
 }
 
