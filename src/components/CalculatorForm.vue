@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div class="calculator-form">
-    <div class="calculator-form__history">{{ `${history}${currentValue}` || 0 }}</div>
+    <div class="calculator-form__history">{{ `${history}${currentValue}` || '' }}</div>
     <div class="calculator-form__value">{{ answer || '' }}</div>
   </div>
 </template>
