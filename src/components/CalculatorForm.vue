@@ -1,18 +1,33 @@
 <script lang="ts" setup>
 defineProps<{
   history: string;
-  value: string;
+  currentValue: string;
+  answer: string;
 }>();
 </script>
 
 <template>
   <div class="calculator-form">
-    <div class="calculator-form__history">{{ history || '' }}</div>
-    <div class="calculator-form__value">{{ value || 0 }}</div>
+    <div class="calculator-form__history">{{ `${history}${currentValue}` || 0 }}</div>
+    <div class="calculator-form__value">{{ answer || '' }}</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.light-theme {
+  .calculator-form__history,
+  .calculator-form__value {
+    color: #000000;
+  }
+}
+
+.dark-theme {
+  .calculator-form__history,
+  .calculator-form__value {
+    color: #FFFFFF;
+  }
+}
+
 .calculator-form {
   display: flex;
   flex-direction: column;
@@ -23,23 +38,25 @@ defineProps<{
     font-weight: 300;
     font-size: 40px;
     line-height: 47px;
-    color: #FFFFFF;
     opacity: 0.4;
+    direction: ltr !important;
   }
   .calculator-form__value {
-    height: 96px;
+    height: 80px;
     font-family: 'Work Sans';
     font-weight: 300;
-    font-size: 96px;
-    line-height: 96px;
-    color: #FFFFFF;
+    font-size: 80px;
+    line-height: 80px;
     width: 100%;
     background-color: transparent;
     border: 0;
+  }
+  .calculator-form__history,
+  .calculator-form__value {
     text-align: right;
     overflow-x: auto;
     overflow-y: hidden;
-    direction: rtl;
+    transition: 0.3s;
     &::-webkit-scrollbar {
       height: 5px;
       border-radius: 5px;
